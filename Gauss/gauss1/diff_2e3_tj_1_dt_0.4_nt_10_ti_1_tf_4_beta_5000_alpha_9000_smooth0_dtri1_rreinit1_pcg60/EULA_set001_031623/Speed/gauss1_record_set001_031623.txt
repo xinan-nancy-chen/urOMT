@@ -1,0 +1,2 @@
+../urOMT/Gauss/gauss1/diff_2e3_tj_1_dt_0.4_nt_10_ti_1_tf_4_beta_5000_alpha_9000_smooth0_dtri1_rreinit1_pcg60/EULA_set001_031623/Speed/gauss1_record_set001_031623
+outdir-long: EULA_gauss1_type_speed_smoothv0_smoothr0_set001_031623
