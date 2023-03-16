@@ -1,0 +1,2 @@
+../urOMT/RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/EULA_set001_031623/Speed/C1217_record_set001_031623
+outdir-long: EULA_C1217_type_speed_smoothv0_smoothr0_set001_031623
