@@ -23,7 +23,9 @@ This work can be considered as the extension of the regularized optimal mass tra
 
 The numerical method of current urOMT problem is described in 
 
-> -- <cite>[Unbalanced Regularized Optimal Mass Transport with Applications to Fluid Flows in the Brain][3]</cite>.
+> -- <cite>[Unbalanced Regularized Optimal Mass Transport with Applications to Fluid Flows in the Brain][3]</cite>
+
+and please cite this paper if you would like to use this code.
 
 [1]: https://arxiv.org/abs/2201.07307
 [2]: https://www.nature.com/articles/s43587-022-00181-4
@@ -31,6 +33,7 @@ The numerical method of current urOMT problem is described in
 
 
 Contact Xinan Chen at chenx7@mskcc.org for questions.
+
 
 ## Sample cases for demonstration
 
