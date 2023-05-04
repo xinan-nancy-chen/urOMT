@@ -34,6 +34,10 @@ and please cite this paper if you would like to use this code.
 
 Contact Xinan Chen at chenx7@mskcc.org for questions.
 
+<p align="center">
+<img src="pipeline.png" width="870" />
+</p>
+<p style="text-align: center;">Pipeline of This Project Applied in Glymphatics in Brain</p>
 
 ## Sample cases for demonstration
 
