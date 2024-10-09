@@ -189,7 +189,7 @@ for i = 1:par.maxUiter
         fprintf('%3d.%d\t    Gammat = %3.2e         %3.2e \t      %3.2e \t      %3.2e \t    %s\n',i,lsiter,Gammat,Gammat1,Gammat2,Gammat3,tag_str);
         
         % test for line search termination
-        if Gammat < Gamma + 1e-8*s'*g%1e-8*s'*g
+        if Gammat < Gamma + 1e-8*s'*g || norm(u(:))<1e-5 || max(u(:))<0.02%1e-8*s'*g
             break;                      %breaks while loop entirely (and goes to next statement after end of while loop)
         end
         muls = muls/2; lsiter = lsiter+1;
