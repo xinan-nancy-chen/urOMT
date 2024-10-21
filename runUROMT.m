@@ -11,7 +11,7 @@ reInitializeU = 1;
 
 fname=sprintf('%s/record.txt',cfg.out_dir);
 if ~exist(sprintf('%s/record.txt',cfg.out_dir),'file')
-    csvwrite_with_headers(fname,[0 0 0 0 0 0 0 0 0 0 0],{'time-ind','ti','tf','gamma','gamma1','gamma2','gamma3','max(u)','min(r)','max(r)','toc'});
+    csvwrite_with_headers(fname,[0 0 0 0 0 0 0 0 0 0 0 0],{'time-ind','ti','tf','gamma','gamma1','gamma2','gamma3','max(u)','min(r)','max(r)','toc','alpha'});
 end
 
 rho_n = cfg.vol(1).data(:);
@@ -75,7 +75,7 @@ for tind = 1:length(cfg.first_time:cfg.time_jump:cfg.last_time)
     rho_n = Rho(:,end);
     btoc = toc(t2);
     
-    dlmwrite(fname,[tind,cfg.first_time+(tind-1)*cfg.time_jump,cfg.first_time+(tind-1)*cfg.time_jump+cfg.time_jump,GAMMA.Gamma,GAMMA.Gamma1,GAMMA.Gamma2,GAMMA.Gamma3,max(u(:)),min(r(:)),max(r(:)),btoc],'-append');
+    dlmwrite(fname,[tind,cfg.first_time+(tind-1)*cfg.time_jump,cfg.first_time+(tind-1)*cfg.time_jump+cfg.time_jump,GAMMA.Gamma,GAMMA.Gamma1,GAMMA.Gamma2,GAMMA.Gamma3,max(u(:)),min(r(:)),max(r(:)),btoc,par.alpha],'-append');
     
     save_un(sprintf('%s/u0_%s_%d_%d_t_%d.mat',cfg.out_dir,cfg.data_tag,cfg.first_time+(tind-1)*cfg.time_jump,cfg.first_time+(tind-1)*cfg.time_jump+cfg.time_jump,tind),u);
     save_rn(sprintf('%s/r0_%s_%d_%d_t_%d.mat',cfg.out_dir,cfg.data_tag,cfg.first_time+(tind-1)*cfg.time_jump,cfg.first_time+(tind-1)*cfg.time_jump+cfg.time_jump,tind),r);

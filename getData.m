@@ -14,7 +14,7 @@ end
 cfg = getParams(data_tag);
 if isfield(cfg,'dataset_name')
     switch cfg.dataset_name
-        case {'Gauss','RatBrainsCAA3M'}
+        case {'Gauss','RatBrainsCAA3M','BreastTumor'}
             % load in data
             im_data = zeros([cfg.domain_size,length(data_tind)]);
             for j = 1:length(data_tind)

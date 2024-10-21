@@ -10,7 +10,7 @@ glacfg.spMSK_str = 'ROImsk'; % original ROI mask for rOMT
 
 %% set parameters, start points and directory
 switch cfg.dataset_name
-    case {'RatBrainsCAA3M'}
+    case {'RatBrainsCAA3M','BreastTumor'}
         glacfg.do_sp = 1; %1 if use sp from max(data)>sp_thresh, 0 o/w
         glacfg.sp_thresh = 10;%6;%8;%1;%12;
 

@@ -7,7 +7,7 @@ function eulcfg = paramInitEULApar(cfg)
 %%
 %% set parameters, start points and directory
 switch cfg.dataset_name
-    case {'RatBrainsCAA3M'}
+    case {'RatBrainsCAA3M','BreastTumor'}
         eulcfg.smoothv = 0; % smooth velocity field
         if eulcfg.smoothv
             eulcfg.Svt = 38; % smoothing w.r.t time
