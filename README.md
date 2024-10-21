@@ -137,7 +137,7 @@ To apply urOMT to cancer DCE-MRI data, we demonstrate our method on a breast can
 Below is the 3D rendering of the breast tumor; the orange region is the region of interest to be analyzed by urOMT.
 
 <p align="center">
-<img src="BreastTumor/BC46_01/tumor3Drendering.png" width="1000" />
+<img src="BreastTumor/BC46_01/tumor3dRendering.png" width="500" />
 </p>
 
 The first row of the following figure is the sequence of the 12 input images (concentration of contrast agent) shown in 2D slice (colorbar = 'grayscale'). The four below rows are returned Eulerian dynamic metrics.
