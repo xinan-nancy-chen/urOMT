@@ -137,7 +137,7 @@ To apply urOMT to cancer DCE-MRI data, we demonstrate our method on a breast can
 Below is the 3D rendering of the breast tumor; the orange region is the region of interest to be analyzed by urOMT.
 
 <p align="center">
-<img src="BreastTumor/BC46_01/tumor3dRendering.png" width="500" />
+<img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/tumor3dRendering.png" width="280" />
 </p>
 
 The first row of the following figure is the sequence of the 12 input images (concentration of contrast agent) shown in 2D slice (colorbar = 'grayscale'). The four below rows are returned Eulerian dynamic metrics.
@@ -146,10 +146,10 @@ The first row of the following figure is the sequence of the 12 input images (co
 <img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/EULA_set001_102124/Speed/BC46_01_Eul_dynamic.png" width="1000" />
 </p>
 
-The Lagrangian results are as follows, the <em>pathlines</em> (left), the <em>velocity flux vectors</em> (middle) and <em>speed-lines</em> (right).
+The Lagrangian results are as follows, the <em>pathlines</em> (left), the <em>displacement vectors</em> (middle) and <em>speed-lines</em> (right).
 
 <p align="center">
-<img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagPathlines_E05_27.png" width="350" /><img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagFluxVector_E05_27.png" width="350" /><img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagSpdlines_E05_27.png" width="350" />
+<img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagPathlines_E05_27.png" width="305" /><img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagFluxVector_E05_27.png" width="300" /><img src="BreastTumor/BC46_01/diff_2e3_tj_2_dt_0.4_nt_10_ti_5_tf_25_beta_1000_alpha_30000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_102124/Pathlines/BC46_01_LagSpdlines_E05_27.png" width="300" />
 </p>
 
 Note: One can alternatively use softeware VisIt 3.3.1 (open source) to visualize the Lagrangian results.
