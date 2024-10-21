@@ -2,6 +2,7 @@
 
 ## Introduction
 
+### Mathematical Formulation
 This project works on an unbalanced version of regularized optimal mass transport (urOMT) problem by adding a new relative source variable and its indicator function into the formulation. Specaifically, we deal with a problem as follows:
 
 Given the initial mass distribution function $\rho_0(x)\geqslant0$ and the final one $\rho_1(x)\geqslant0$ defined on a bounded region $\Omega\subseteq\mathbb{R}^3$, one solves
@@ -15,29 +16,37 @@ $$\rho(0,x) = \rho_0(x), \quad\rho(T,x) = \rho_1(x)$$
 
 where a temporal dimension $t\in[0,T]$ is added to the transport process. In the above expression, $\rho(t,x)$ is the dynamic density function; $v(t,x)$ is the velocity field defining the flow from $\rho_0$ to $\rho_1$; $r(t,x)$ is the relative source variable; $\chi(t,x)$ is the given indicator function of $r(t,x)$ which takes values either 0 or 1 to constrain $r$ to a certain spatial and temporal location; constant $\sigma>0$ is the diffusion coefficient; $\alpha>0$ is the weighting parameter of the source term in the cost functional.
 
+### Previous Work
 This work can be considered as the extension of the regularized optimal mass transport (rOMT) problem with code available at https://github.com/xinan-nancy-chen/rOMT and https://github.com/xinan-nancy-chen/rOMT_spdup and with papers available at
 
 > -- <cite>[Visualizing fluid flows via regularized optimal mass transport with applications to neuroscience][1]</cite>,
 
 > -- <cite>[Cerebral amyloid angiopathy is associated with glymphatic transport reduction and time-delayed solute drainage along the neck arteries][2]</cite>.
 
-The numerical method of current urOMT problem is described in 
+### Publications Using This Code
+1. The numerical method of the current urOMT problem is described and demonstrated with two samples in 
 
-> -- <cite>[Unbalanced Regularized Optimal Mass Transport with Applications to Fluid Flows in the Brain][3]</cite>
+> -- <cite>[Unbalanced regularized optimal mass transport with applications to fluid flows in the brain][3]</cite>
 
 and please cite this paper if you would like to use this code.
 
-[1]: https://arxiv.org/abs/2201.07307
+2. The first pratical application of the urOMT model is to the glymphatic system measured by rat brain DCE-MRI with cerebral amyloid angiopathy or Alzheimer's disease, which is now in press at iScience with title "Divergent brain solute clearance in rat models of cerebral amyloid angiopathy and Alzheimer’s disease". In this work, we utilized the urOMT model to reveal different fluid clearance patterns in the aforementioned two neuro-diseases.
+
+3. The second practical application of the urOMT mode is to human breast cancer DCE-MRI to visualize and quantify the fluid flows within tumors and evaluate the theraputic responses. Preliminary results were reported at SPIE Medcial Imaging 2024 Conference:
+
+> -- <cite>[Characterizing fluid flows in breast tumor DCE-MRI studies using unbalanced regularized optimal mass transport methods][4]</cite>,
+
+AAPM 2023 Conference and ISMRM 2024 Conference. The latest manuscript has been sent to Magnetic Resonance in Medicine (Magn Reson Med).
+
+[1]: https://link.springer.com/article/10.1007/s10915-023-02337-9
 [2]: https://www.nature.com/articles/s43587-022-00181-4
-[3]: https://arxiv.org/abs/2301.11228
+[3]: https://www.nature.com/articles/s41598-023-50874-y
+[4]: https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12926/129261T/Characterizing-fluid-flows-in-breast-tumor-DCE-MRI-studies-using/10.1117/12.3005382.short
 
-
+### Contact
 Contact Xinan Chen at chenx7@mskcc.org for questions.
 
-<p align="center">
-<img src="pipeline.png" width="870" />
-</p>
-<p style="text-align: center;">Pipeline of This Project Applied in Glymphatics in Brain</p>
+
 
 ## Sample cases for demonstration
 
@@ -97,4 +106,8 @@ The Lagrangian results are as follows, the <em>pathlines</em> (top-left), the <e
 <img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_031623/Pathlines/C1217_LagSpdlines_E07_35.png" width="350" /><img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_031623/Pathlines/C1217_LagPelines_E07_35.png" width="350" />
 </p>
 
-One can alternatively use softeware VisIt 3.3.1 (open source) to visualize the Lagrangian results.
+Note: One can alternatively use softeware VisIt 3.3.1 (open source) to visualize the Lagrangian results.
+
+| ![pipeline.png](pipeline.png) | 
+|:--:| 
+| *Pipeline of urOMT applied to the Glymphatic System in Rat Brains* |
