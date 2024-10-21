@@ -1,8 +1,10 @@
+  ---
 # urOMT (unbalanced regularized optimal mass transport)
+  ---
 
-## Introduction
+# Introduction
 
-### Mathematical Formulation
+## Mathematical Formulation
 This project works on an unbalanced version of regularized optimal mass transport (urOMT) problem by adding a new relative source variable and its indicator function into the formulation. Specaifically, we deal with a problem as follows:
 
 Given the initial mass distribution function $\rho_0(x)\geqslant0$ and the final one $\rho_1(x)\geqslant0$ defined on a bounded region $\Omega\subseteq\mathbb{R}^3$, one solves
@@ -16,14 +18,14 @@ $$\rho(0,x) = \rho_0(x), \quad\rho(T,x) = \rho_1(x)$$
 
 where a temporal dimension $t\in[0,T]$ is added to the transport process. In the above expression, $\rho(t,x)$ is the dynamic density function; $v(t,x)$ is the velocity field defining the flow from $\rho_0$ to $\rho_1$; $r(t,x)$ is the relative source variable; $\chi(t,x)$ is the given indicator function of $r(t,x)$ which takes values either 0 or 1 to constrain $r$ to a certain spatial and temporal location; constant $\sigma>0$ is the diffusion coefficient; $\alpha>0$ is the weighting parameter of the source term in the cost functional.
 
-### Previous Work
+## Previous Work
 This work can be considered as the extension of the regularized optimal mass transport (rOMT) problem with code available at https://github.com/xinan-nancy-chen/rOMT and https://github.com/xinan-nancy-chen/rOMT_spdup and with papers available at
 
 > -- <cite>[Visualizing fluid flows via regularized optimal mass transport with applications to neuroscience][1]</cite>,
 
 > -- <cite>[Cerebral amyloid angiopathy is associated with glymphatic transport reduction and time-delayed solute drainage along the neck arteries][2]</cite>.
 
-### Publications Using This Code
+## Publications Using This Code
 1. The numerical method of the current urOMT problem is described and demonstrated with two samples in 
 
 > -- <cite>[Unbalanced regularized optimal mass transport with applications to fluid flows in the brain][3]</cite>
@@ -43,16 +45,31 @@ AAPM 2023 Conference and ISMRM 2024 Conference. The latest manuscript has been s
 [3]: https://www.nature.com/articles/s41598-023-50874-y
 [4]: https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12926/129261T/Characterizing-fluid-flows-in-breast-tumor-DCE-MRI-studies-using/10.1117/12.3005382.short
 
-### Contact
+## Contact
 Contact Xinan Chen at chenx7@mskcc.org for questions.
 
 
 
-## Sample cases for demonstration
 
-In this section, we use two datasets to briefly show how our method can quantify and visualize the dynamic fluid flows.
+# Sample cases for demonstration
 
-### (A) Gaussian Spheres
+In this section, we use three datasets to briefly show how our method can quantify and visualize the dynamic fluid flows:
+
+(A). **Synthetic geometric data based on Gaussian sphere.**
+
+*Related publication: <cite>[Unbalanced regularized optimal mass transport with applications to fluid flows in the brain][3]</cite>*
+
+(B). **Rat brain DCE-MRI in the glymphatic system.**
+
+*Related publications: <cite>[Unbalanced regularized optimal mass transport with applications to fluid flows in the brain][3]</cite> and "Divergent brain solute clearance in rat models of cerebral amyloid angiopathy and Alzheimer’s disease"*
+
+(C). **Breast cancer DCE-MRI.**
+
+*Related publications: <cite>[Characterizing fluid flows in breast tumor DCE-MRI studies using unbalanced regularized optimal mass transport methods][4]</cite> and "An optimal mass transport model for the analysis of DCE-MRI and its application to breast cancer treatment response"*
+
+For each demonatration, a driver script was created specifically with name ``driver_***.m``. One can run this driver script only and the results will pop up automatically with default parameters.
+
+## (A) Gaussian Spheres
 
 We created five successive Gaussian-based spheres of size $50\times50\times50$ to test our urOMT algorihtm on. One can go to script ``create_gaussian.m`` to check how we created the synthetic data if interested. The five input images are plotted in 3D rendering as follows.
 
@@ -78,7 +95,7 @@ We also plot the returned Lagrangian results, the <em>pathlines</em> (top-left),
 <img src="Gauss/gauss1/diff_2e3_tj_1_dt_0.4_nt_10_ti_1_tf_4_beta_5000_alpha_9000_smooth0_dtri1_rreinit1_pcg60/LPPA_set001_031623/Pathlines/gauss1_LagPelines_E01_05.png" width="300" />
 </p>
 
-### (A) Rat Brain MRI
+## (B) Rat Brain DCE-MRI
 
 We also test out method on real Dynamic Contrast Enhanced MRI (DCE-MRI) data which is from a 3-month-old healthy rat brain. The follows is the sequence of the 15 input images shown in 3D rendering from right-lateral view (colorbar = 'jet', limits = [0,300]).
 
@@ -111,3 +128,27 @@ Note: One can alternatively use softeware VisIt 3.3.1 (open source) to visualize
 | ![pipeline.png](pipeline.png) | 
 |:--:| 
 | *Pipeline of urOMT applied to the Glymphatic System in Rat Brains* |
+
+
+## (C) Breast Cancer DCE-MRI
+
+We also test out method on real Dynamic Contrast Enhanced MRI (DCE-MRI) data which is from a 3-month-old healthy rat brain. The follows is the sequence of the 15 input images shown in 3D rendering from right-lateral view (colorbar = 'jet', limits = [0,300]).
+
+<p align="center">
+<img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/images_7_tind_1.png" width="170" /><img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/images_9_tind_2.png" width="170" />
+</p>
+
+One can use script ``driver_RatBrain.m`` with default parameters to run urOMT algorithm and its post-processings, which takes about 9 hours on a cluster with 3 CPUs. The visualized results will pop up automatically.
+
+The Eulerian results are as follows, the <em>time-averaged Eulerian speed maps</em> (top row) and <em>time-averaged Eulerian speed maps</em> (bottom row).
+
+<p align="center">
+<img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/EULA_set001_031623/Speed/C1217_EulAveSpeed_E07_11.png" width="170" />
+</p>
+
+The Lagrangian results are as follows, the <em>pathlines</em> (top-left), the <em>velocity flux vectors</em> (top-right), the <em>speed-lines</em> (bottom-left) and the <em>Péclet-lines</em> (bottom-right).
+
+<p align="center">
+<img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_031623/Pathlines/C1217_LagPathlines_E07_35.png" width="350" /><img src="RatBrainsCAA3M/C1217/diff_2e3_tj_2_dt_0.4_nt_10_ti_7_tf_33_beta_50_alpha_10000_smooth1_dtri1_rreinit0_pcg60/LPPA_set001_031623/Pathlines/C1217_LagFluxVector_E07_35.png" width="350" />
+</p>
+
